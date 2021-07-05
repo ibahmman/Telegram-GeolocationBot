@@ -1,8 +1,10 @@
+#   ---------------------------------------- Convert SVG to PNG
 from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPM
+#   ---------------------------------------- Get Countrys API
+from restcountries import RestCountryApiV2 as rapi
 
 import requests, logging, json
-from restcountries import RestCountryApiV2 as rapi
 from telegram import Update, ReplyKeyboardMarkup, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, ForceReply
 from telegram.ext import Updater, Filters, CallbackQueryHandler, CallbackContext, MessageHandler, CommandHandler
 
@@ -13,8 +15,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 #   ---------------------------------------- متغیر های عمومی رباط
-botToken = '1769684256:AAFvf2iiIV-tV85pyRgGPI1n7sBs9qF1ZPE'
-numbers = [0,1,2,3,4,5,6,7,8,9]
+botToken = ''
 #============================================================================================================================================
 
 
@@ -138,8 +139,6 @@ main_markup = ReplyKeyboardMarkup(reply_keyboard)
 
 #   ---------------------------------------- تابع های اصلی ربات
 def echo(update:Update, context:CallbackContext):
-    global numbers
-
     if update.message.text == '/start':
         update.message.reply_text(text='درود', reply_markup=main_markup)
 
