@@ -1,4 +1,4 @@
-# geolocationbot
+# Telegram-GeolocationBot
 # پروژه تحصیلی
 ربات تلگرام
 -
